@@ -1,5 +1,5 @@
 <h1 align="center">Assalamualaikum, I'm TALHA JUBAYER</h1>
-<h3 align="center">A passionate broken developer from Bangladesh</h3>
+<h3 align="center">A passionate broken programmer from Bangladesh</h3>
 <img align="right" alt="Coding" width="400" src="https://gifdb.com/images/high/animated-chock-coding-c78f6elj32sfoi8q.gif">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=itsnottalha&label=Profile%20views&color=0e75b6&style=flat" alt="itsnottalha" /> </p>
