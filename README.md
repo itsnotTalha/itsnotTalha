@@ -4,14 +4,12 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=itsnottalha&label=Profile%20views&color=0e75b6&style=flat" alt="itsnottalha" /> </p>
 
-- 🌱 I’m currently learning **C++, UI/UX Design**
+- 🌱 I’m currently learning **JAVA**
 
 - 💬 Ask me about **C**
 
 - 📫 How to reach me **talhajubayer737@gmail.com**
-
-- ⚡ Fun fact **I am not gonna pass my exam**
-### ✍️Random Dev Quote
+### ✍️Fav Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
 <h3 align="left">Connect with me:</h3>
 <p align="left">
