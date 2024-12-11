@@ -10,7 +10,7 @@
 
 - 📫 How to reach me **talhajubayer737@gmail.com**
  
-- 🪂 Pay a visit **https://itsnottalha.github.io/**
+- 🪂 Pay a visit **https://itsnottalha.github.io**
 ### ✍️Fav Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
 <h3 align="left">Connect with me:</h3>
