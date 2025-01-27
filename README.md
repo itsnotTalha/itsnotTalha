@@ -13,8 +13,8 @@
 - 🪂 Pay a visit **https://itsnottalha.github.io**
 ### ✍️Fav Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
-<h3 align="left">Connect with me:</h3>
-<p align="left">
+<h3 align="right">Connect with me:</h3>
+<p align="right">
 <a href="https://linkedin.com/in/talha-jubayer-10b544317/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/talha-jubayer-10b544317/" height="30" width="40" /></a>
 <a href="https://fb.com/muhitnomore" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="muhitnomore" height="30" width="40" /></a>
 <a href="https://instagram.com/talhajubayermuhiit" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="talhajubayermuhiit" height="30" width="40" /></a>
