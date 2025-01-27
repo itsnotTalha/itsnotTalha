@@ -13,7 +13,6 @@
 - 🪂 Pay a visit **https://itsnottalha.github.io**
 ### ✍️Fav Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
-<div style="display: flex; justify-content: space-between; align-items: center;">
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
 
