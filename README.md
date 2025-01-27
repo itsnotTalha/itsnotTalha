@@ -16,7 +16,6 @@
 <div style="display: flex; justify-content: space-between; align-items: center;">
 
 <!-- Left-aligned: Languages and Tools -->
-<div>
   <h3>Languages and Tools:</h3>
   <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" width="40" height="40" />
@@ -39,10 +38,10 @@
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" />
   </a>
-</div>
+
 
 <!-- Right-aligned: Connect with Me -->
-<div>
+
   <h3 align="right">Connect with Me:</h3>
   <p align="right">
     <a href="https://linkedin.com/in/talha-jubayer-10b544317/" target="_blank">
@@ -61,7 +60,7 @@
       <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codeforces.svg" alt="Codeforces" height="30" width="40" />
     </a>
   </p>
-</div>
+
 
 </div>
 
