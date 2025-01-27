@@ -1,5 +1,10 @@
-<h1 align="center">Assalamualaikum, I'm TALHA JUBAYER</h1>
-<h3 align="center">A passionate broken programmer from Bangladesh</h3>
+<div>
+<h1 align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com/?lines=Assalamualaikum!+👋;This+is+Talha+Jubayer....;Nice+to+meet+you!&center=true&size=30">
+  </a>
+</h1>
+</div>
 <img align="right" alt="Coding" width="400" src="https://gifdb.com/images/high/animated-chock-coding-c78f6elj32sfoi8q.gif">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=itsnottalha&label=Profile%20views&color=0e75b6&style=flat" alt="itsnottalha" /> </p>
@@ -66,17 +71,18 @@
 
 </div>
 
+![Code Time](http://img.shields.io/badge/Code%20Time-192%20hrs%2016%20mins-blue)
 
-<p align="center">
-  <img alig src="https://github-profile-trophy.vercel.app/?username=itsnotTalha&theme=onedark&column=-1" />
-</p>
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-1.0%20million%20lines%20of%20code-blue)
+
 
 [![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=itsnotTalha&theme=github-dark-dimmed&custom_title=Talha's%20Activity%20Graph&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=itsnottalha&show_icons=true&locale=en&layout=compact" alt="itsnottalha" /></p>
+<p><img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=itsnottalha&" alt="itsnottalha" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=itsnottalha&show_icons=true&locale=en" alt="itsnottalha" /></p>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=itsnottalha&" alt="itsnottalha" /></p>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"/>
+</p>
