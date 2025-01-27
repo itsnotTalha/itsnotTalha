@@ -13,6 +13,7 @@
 - 🪂 Pay a visit **https://itsnottalha.github.io**
 ### ✍️Fav Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
+<p aign = "center">
 <h3 align="right">Connect with me:</h3>
 <p align="right">
 <a href="https://linkedin.com/in/talha-jubayer-10b544317/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/talha-jubayer-10b544317/" height="30" width="40" /></a>
@@ -45,6 +46,7 @@
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
   </a>
+</p>
 </p>
 
 <p align="center">
