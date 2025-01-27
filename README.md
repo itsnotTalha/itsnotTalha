@@ -6,7 +6,7 @@
 
 - 🌱 I’m currently learning **JAVA**
 
-- 💬 Ask me about **C**
+- 💬 Ask me about **Nature and The Sky**
 
 - 📫 How to reach me **talhajubayer737@gmail.com**
  
