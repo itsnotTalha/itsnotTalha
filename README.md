@@ -81,8 +81,8 @@
 
 <!--
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=itsnottalha&show_icons=true&locale=en&layout=compact" alt="itsnottalha" /></p>
-<p><img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=itsnottalha&" alt="itsnottalha" /></p>
 -->
+
 <h3 align="left">My Stats :</h3>
 
 ###
@@ -90,6 +90,7 @@
 <br clear="both">
 
 <div align="center">
+  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=itsnottalha&" alt="itsnottalha" />
   <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=itsnotTalha&amp;theme=dark" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=itsnotTalha&amp;theme=dark" style="max-width: 100%;">
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=itsnotTalha&amp;theme=dark" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=itsnotTalha&amp;theme=dark" style="max-width: 100%;">
 <!--  <img align="center" src="https://github-readme-stats.vercel.app/api?username=itsnotTalha&amp;hide_title=false&amp;hide_rank=false&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;disable_animations=false&amp;theme=dark&amp;locale=en&amp;hide_border=false&amp;order=1" height="163em" alt="stats graph" data-canonical-src="https://github-readme-stats.vercel.app/api?username=itsnotTalha&amp;hide_title=false&amp;hide_rank=false&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;disable_animations=false&amp;theme=dark&amp;locale=en&amp;hide_border=false&amp;order=1" style="max-width: 100%;">
