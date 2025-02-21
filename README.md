@@ -5,7 +5,7 @@
   </a>
 </h1>
 </div>
-<img align="right" alt="Coding" width="400" src="https://gifdb.com/images/high/animated-chock-coding-c78f6elj32sfoi8q.gif">
+<img align="right" alt="Coding" width="400" src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=itsnottalha&theme=transparent">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=itsnottalha&label=Profile%20views&color=0e75b6&style=flat" alt="itsnottalha" /> </p>
 
@@ -16,8 +16,9 @@
 - 📫 How to reach me **talhajubayer737@gmail.com**
  
 - 🪂 Pay a visit **https://itsnottalha.github.io**
-### ✍️Fav Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
+
+  
+
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
 
@@ -46,6 +47,11 @@
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" />
   </a>
 </div>
+<div>
+  <p align="center">
+    <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=algolia&border=false" />
+  </p>
+</div>
 
 <!-- Right-aligned: Connect with Me -->
 <div>
@@ -71,7 +77,9 @@
 
 </div>
 
-![Code Time](http://img.shields.io/badge/Code%20Time-192%20hrs%2016%20mins-blue)
+## Code Time
+![Code Time](https://wakatime.com/badge/user/itsnotTalha/repo/CPP.svg)
+
 
 <!--![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-1.0%20million%20lines%20of%20code-blue)-->
 
@@ -90,11 +98,14 @@
 <br clear="both">
 
 <div align="center">
-  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=itsnottalha&" alt="itsnottalha" />
-  <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=itsnotTalha&amp;theme=dark" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=itsnotTalha&amp;theme=dark" style="max-width: 100%;">
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=itsnotTalha&amp;theme=dark" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=itsnotTalha&amp;theme=dark" style="max-width: 100%;">
+  
+  <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=itsnottalha&theme=transparent" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=itsnotTalha&amp;theme=dark" style="max-width: 100%;">
+<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=itsnottalha&theme=transparent" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=itsnotTalha&amp;theme=dark" style="max-width: 100%;">
+
 <!--  <img align="center" src="https://github-readme-stats.vercel.app/api?username=itsnotTalha&amp;hide_title=false&amp;hide_rank=false&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;disable_animations=false&amp;theme=dark&amp;locale=en&amp;hide_border=false&amp;order=1" height="163em" alt="stats graph" data-canonical-src="https://github-readme-stats.vercel.app/api?username=itsnotTalha&amp;hide_title=false&amp;hide_rank=false&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;disable_animations=false&amp;theme=dark&amp;locale=en&amp;hide_border=false&amp;order=1" style="max-width: 100%;">
--->  <img align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=itsnotTalha&amp;theme=dark" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=devhasibulislam&amp;theme=dark" style="max-width: 100%;">
+-->  
+<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=itsnottalha&theme=transparent" height="163em" data-canonical-src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=itsnottalha&amp;theme=dark" style="max-width: 700;">
+<a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=itsnottalha&theme=github-dark-blue&hide_border=true&short_numbers=true&card_width=700&card_height=163&fire=CE0A09" alt="GitHub Streak" /></a>
 </div>
 
 ###
