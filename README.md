@@ -78,12 +78,13 @@
 </div>
 
 ## Code Time
-![Code Time](https://wakatime.com/badge/user/itsnotTalha/repo/CPP.svg)
+![Code Time](https://wakatime.com/badge/user/dea93d17-4265-4298-a57f-4f9d1cc0fe26.svg?style=plastic&color=blue)
+
 
 
 <!--![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-1.0%20million%20lines%20of%20code-blue)-->
 
-
+## My Acitvity
 [![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=itsnotTalha&theme=github-dark-dimmed&custom_title=Talha's%20Activity%20Graph&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 
@@ -91,8 +92,8 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=itsnottalha&show_icons=true&locale=en&layout=compact" alt="itsnottalha" /></p>
 -->
 
-<h3 align="left">My Stats :</h3>
 
+## My Stats 
 ###
 
 <br clear="both">
