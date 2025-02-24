@@ -44,7 +44,8 @@ def update_readme():
         print("Failed to fetch coding time data.")
         return
 
-    with open(README_PATH, "r") as file:
+    # Open the README file with UTF-8 encoding
+    with open(README_PATH, "r", encoding="utf-8") as file:
         readme = file.readlines()
 
     start_marker = "<!-- CODESTATS:START -->"
@@ -65,8 +66,10 @@ def update_readme():
         if not inside_block:
             new_content.append(line)
 
-    with open(README_PATH, "w") as file:
+    # Write back to the README file with UTF-8 encoding
+    with open(README_PATH, "w", encoding="utf-8") as file:
         file.writelines(new_content)
+
 
 if __name__ == "__main__":
     update_readme()
