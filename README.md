@@ -80,11 +80,6 @@
 ## Code Time
 ![Code Time](https://wakatime.com/badge/user/dea93d17-4265-4298-a57f-4f9d1cc0fe26.svg?style=plastic&color=blue)
 
-## ⏳ Coding Activity (Code::Stats)
-<!-- CODESTATS:START -->
-Fetching latest coding time...
-<!-- CODESTATS:END -->
-
 
 <!--![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-1.0%20million%20lines%20of%20code-blue)-->
 
