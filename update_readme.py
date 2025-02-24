@@ -22,7 +22,7 @@ def fetch_coding_time():
         
         # Filter out languages without 'xp' and sort
         sorted_langs = sorted(
-            ((lang, info) for lang, info in languages.items() if "xp" in info),  # Corrected here
+            ((lang, info) for lang, info in languages.items() if "xp" in info), 
             key=lambda x: x[1]["xp"],
             reverse=True
         )
@@ -36,6 +36,8 @@ def fetch_coding_time():
             lang_times.append(f"- {lang}: {lang_hours}h {lang_min}m")
 
         return hours, minutes, "\n".join(lang_times)
+    
+    print("Failed to fetch data, status code:", response.status_code)  # Debug line
     return None, None, None
 
 def update_readme():
@@ -59,7 +61,7 @@ def update_readme():
             new_content.append(line)
             new_content.append(f"**Total Coding Time:** {hours}h {minutes}m\n\n")
             new_content.append("### Time Spent Per Language:\n")
-            new_content.append(lang_times + "\n\n")
+            new_content.append(lang_times + "\n\n")  # Ensure lang_times is added correctly
             continue
         if line.strip() == end_marker:
             inside_block = False
@@ -69,7 +71,6 @@ def update_readme():
     # Write back to the README file with UTF-8 encoding
     with open(README_PATH, "w", encoding="utf-8") as file:
         file.writelines(new_content)
-
 
 if __name__ == "__main__":
     update_readme()
