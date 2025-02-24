@@ -12,14 +12,20 @@ def fetch_coding_time():
     if response.status_code == 200:
         data = response.json()
         total_xp = data["total_xp"]
-        
+
         # Convert XP to estimated time
         total_minutes = total_xp / XP_PER_MINUTE
         hours = int(total_minutes // 60)
         minutes = int(total_minutes % 60)
 
         languages = data["languages"]
-        sorted_langs = sorted(languages.items(), key=lambda x: x[1]["xp"], reverse=True)
+        
+        # Filter out languages without 'xp'
+        sorted_langs = sorted(
+            (lang, info) for lang, info in languages.items() if "xp" in info,
+            key=lambda x: x[1]["xp"],
+            reverse=True
+        )
 
         lang_times = []
         for lang, info in sorted_langs[:5]:  # Top 5 languages
