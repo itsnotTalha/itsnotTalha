@@ -20,9 +20,9 @@ def fetch_coding_time():
 
         languages = data["languages"]
         
-        # Filter out languages without 'xp'
+        # Filter out languages without 'xp' and sort
         sorted_langs = sorted(
-            (lang, info) for lang, info in languages.items() if "xp" in info,
+            ((lang, info) for lang, info in languages.items() if "xp" in info),  # Corrected here
             key=lambda x: x[1]["xp"],
             reverse=True
         )
