@@ -13,17 +13,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Debug WakaTime API Response
+        run: |
+          curl -s "https://wakatime.com/api/v1/users/current/stats/all_time?api_key=${{ secrets.WAKATIME_API_KEY }}" | jq '.' > wakatime.json
+          cat wakatime.json  # Print full response for debugging
+
       - name: Fetch WakaTime Stats
         run: |
-          curl -s "https://wakatime.com/api/v1/users/current/stats/all_time?api_key=${{ secrets.WAKATIME_API_KEY }}" > wakatime.json
-          TOTAL_TIME=$(jq -r '.data.human_readable_total' wakatime.json)
+          TOTAL_TIME=$(jq -r '.data.human_readable_total // "N/A"' wakatime.json)  # Handle missing data
           echo "Total Coding Time : $TOTAL_TIME"
           echo "Total Coding Time : $TOTAL_TIME" > waka-stats.txt
 
-
       - name: Update README
         run: |
-          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$(cat waka-stats.txt)\n<!--END_WAKATIME-->" README.md
+          TOTAL_TIME=$(cat waka-stats.txt)
+          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$TOTAL_TIME\n<!--END_WAKATIME-->" README.md
 
       - name: Commit & Push Changes
         env:
@@ -31,6 +35,6 @@ jobs:
         run: |
           git config --global user.name "itsnotTalha"
           git config --global user.email "talhajubayer737@gmail.com"
-          git remote set-url origin https://itsnotTalha:${{ secrets.GH_PAT }}@github.com/itsnotTalha/itsnotTalha.git
+          git add README.md
           git commit -m "Updated WakaTime stats" || echo "No changes to commit"
           git push origin main
