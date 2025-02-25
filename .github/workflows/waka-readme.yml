@@ -15,14 +15,15 @@ jobs:
 
       - name: Fetch WakaTime Stats
         run: |
-          curl -s "https://wakatime.com/api/v1/users/current/all_time_since_today?api_key=${{ secrets.WAKATIME_API_KEY }}" > wakatime.json
-          TOTAL_TIME=$(jq -r '.data.text' wakatime.json)
-          echo "Total Coding Time: $TOTAL_TIME"
-          echo "Total Coding Time: $TOTAL_TIME" > waka-stats.txt
+          curl -s "https://wakatime.com/api/v1/users/current/stats/all_time?api_key=${{ secrets.WAKATIME_API_KEY }}" > wakatime.json
+          TOTAL_TIME=$(jq -r '.data.human_readable_total' wakatime.json)
+          echo "Total Coding Time : $TOTAL_TIME"
+          echo "Total Coding Time : $TOTAL_TIME" > waka-stats.txt
+
 
       - name: Update README
         run: |
-          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\nTotal Coding Time: $(cat waka-stats.txt)\n<!--END_WAKATIME-->" README.md
+          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$(cat waka-stats.txt)\n<!--END_WAKATIME-->" README.md
 
       - name: Commit & Push Changes
         env:
