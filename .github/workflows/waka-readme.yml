@@ -3,7 +3,7 @@ name: Update WakaTime Stats
 on:
   schedule:
     - cron: "0 * * * *"  # Runs every hour
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -20,9 +20,12 @@ jobs:
 
       - name: Fetch WakaTime Stats
         run: |
-          TOTAL_TIME=$(jq -r '.data.human_readable_total // "N/A"' wakatime.json)  # Handle missing data
-          echo "Total Coding Time : $TOTAL_TIME"
-          echo "Total Coding Time : $TOTAL_TIME" > waka-stats.txt
+          TOTAL_SECONDS=$(jq -r '.data.total_seconds // 0' wakatime.json)
+          TOTAL_HOURS=$((TOTAL_SECONDS / 3600))
+          TOTAL_MINUTES=$(( (TOTAL_SECONDS % 3600) / 60 ))
+          TOTAL_TIME="Total Coding Time : ${TOTAL_HOURS} hrs ${TOTAL_MINUTES} mins"
+          echo "$TOTAL_TIME"
+          echo "$TOTAL_TIME" > waka-stats.txt
 
       - name: Update README
         run: |
