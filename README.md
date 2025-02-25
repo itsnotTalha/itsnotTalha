@@ -80,7 +80,7 @@
 ## Code Time
 ![Code Time](https://wakatime.com/badge/user/dea93d17-4265-4298-a57f-4f9d1cc0fe26.svg?style=plastic&color=blue)
 <!--START_WAKATIME-->
-Total Coding Time: Loading...
+Total Coding Time: Total Coding Time: 3 hrs 18 mins
 <!--END_WAKATIME-->
 
 
