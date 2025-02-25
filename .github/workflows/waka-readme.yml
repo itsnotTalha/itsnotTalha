@@ -42,7 +42,8 @@ jobs:
         run: |
           TOTAL_OUTPUT=$(cat waka-stats.txt)
           echo "Updating README with: $TOTAL_OUTPUT"  # Debugging
-          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$TOTAL_OUTPUT\n<!--END_WAKATIME-->" README.md
+          # Use printf to handle newlines properly
+          printf "%s" "$TOTAL_OUTPUT" | sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$(cat -)\n<!--END_WAKATIME-->" README.md
 
       - name: Commit & Push Changes
         env:
