@@ -20,17 +20,29 @@ jobs:
 
       - name: Fetch WakaTime Stats
         run: |
+          # Get total coding time in seconds
           TOTAL_SECONDS=$(jq -r '.data.total_seconds // 0' wakatime.json)
+          echo "Extracted Total Seconds: $TOTAL_SECONDS"  # Debugging
+
+          # Convert to hours and minutes
           TOTAL_HOURS=$((TOTAL_SECONDS / 3600))
           TOTAL_MINUTES=$(( (TOTAL_SECONDS % 3600) / 60 ))
+
+          # Prepare total coding time message
           TOTAL_TIME="Total Coding Time : ${TOTAL_HOURS} hrs ${TOTAL_MINUTES} mins"
-          echo "$TOTAL_TIME"
-          echo "$TOTAL_TIME" > waka-stats.txt
+
+          # Get languages and their usage
+          LANGUAGES=$(jq -r '.data.languages[] | "\(.name): \(.percent)%"' wakatime.json | sort -k2 -nr)
+          echo "Languages and their usage: $LANGUAGES"  # Debugging
+
+          # Combine total time and languages for output
+          echo -e "$TOTAL_TIME\n\nLanguages Used:\n$LANGUAGES" > waka-stats.txt
 
       - name: Update README
         run: |
-          TOTAL_TIME=$(cat waka-stats.txt)
-          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$TOTAL_TIME\n<!--END_WAKATIME-->" README.md
+          TOTAL_OUTPUT=$(cat waka-stats.txt)
+          echo "Updating README with: $TOTAL_OUTPUT"  # Debugging
+          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$TOTAL_OUTPUT\n<!--END_WAKATIME-->" README.md
 
       - name: Commit & Push Changes
         env:
@@ -39,5 +51,6 @@ jobs:
           git config --global user.name "itsnotTalha"
           git config --global user.email "talhajubayer737@gmail.com"
           git add README.md
+          git status  # Debugging
           git commit -m "Updated WakaTime stats" || echo "No changes to commit"
           git push origin main
