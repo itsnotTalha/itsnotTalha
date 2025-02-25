@@ -18,18 +18,26 @@ jobs:
           # Fetch JSON data from WakaTime API
           curl -s "https://wakatime.com/api/v1/users/current/stats/all_time?api_key=${{ secrets.WAKATIME_API_KEY }}" | jq '.' > wakatime.json
           
-          # Extract total time (directly use the human-readable format)
-          TOTAL_TIME=$(jq -r '.data.human_readable_total // "0 hrs 0 mins"' wakatime.json)
-          
-          # Extract language statistics
-          LANGUAGES=$(jq -r '.data.languages[] | "\(.name): \(.percent)%"' wakatime.json | sort -k2 -nr)
+          # Extract total time (in seconds)
+          TOTAL_SECONDS=$(jq -r '.data.total_seconds // 0' wakatime.json)
 
-          # Debugging output
-          echo "Total Coding Time: $TOTAL_TIME"
-          echo "Languages Used: $LANGUAGES"
+          # Load previous total time if exists, else start from 0
+          if [ -f total_time.txt ]; then
+            PREVIOUS_TOTAL=$(cat total_time.txt)
+          else
+            PREVIOUS_TOTAL=0
+          fi
 
-          # Save output to file
-          echo -e "Total Coding Time : $TOTAL_TIME\n\nLanguages Used:\n$LANGUAGES" > waka-stats.txt
+          # Add the new total coding time to the previous total
+          NEW_TOTAL=$((PREVIOUS_TOTAL + TOTAL_SECONDS))
+
+          # Convert total seconds to human-readable format (H:M:S)
+          TOTAL_HOURS=$((NEW_TOTAL / 3600))
+          TOTAL_MINUTES=$(((NEW_TOTAL % 3600) / 60))
+
+          # Save the updated time
+          echo "$NEW_TOTAL" > total_time.txt
+          echo "Total Coding Time : ${TOTAL_HOURS} hrs ${TOTAL_MINUTES} mins" > waka-stats.txt
 
       - name: Update README
         run: |
@@ -37,7 +45,7 @@ jobs:
           echo "Updating README with: $TOTAL_OUTPUT"
           
           # Update README.md between markers
-          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$(cat waka-stats.txt)\n<!--END_WAKATIME-->" README.md
+          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$TOTAL_OUTPUT\n<!--END_WAKATIME-->" README.md
 
       - name: Commit & Push Changes
         env:
@@ -45,7 +53,6 @@ jobs:
         run: |
           git config --global user.name "itsnotTalha"
           git config --global user.email "talhajubayer737@gmail.com"
-          git add README.md
-          git status  # Debugging
-          git commit -m "Updated WakaTime stats" || echo "No changes to commit"
+          git add README.md total_time.txt
+          git commit -m "Updated cumulative WakaTime coding stats" || echo "No changes to commit"
           git push origin main
