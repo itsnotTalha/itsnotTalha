@@ -40,10 +40,18 @@ jobs:
 
       - name: Update README
         run: |
-          TOTAL_OUTPUT=$(cat waka-stats.txt)
-          echo "Updating README with: $TOTAL_OUTPUT"  # Debugging
-          # Use printf to handle newlines properly
-          printf "%s" "$TOTAL_OUTPUT" | sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$(cat -)\n<!--END_WAKATIME-->" README.md
+          # Read waka-stats.txt into a variable
+          TOTAL_OUTPUT=$(<waka-stats.txt)
+
+          # Escape special characters for sed
+          ESCAPED_TOTAL_OUTPUT=$(echo "$TOTAL_OUTPUT" | sed 's/[\/&]/\\&/g')
+
+          # Debug output
+          echo "Updating README with:"
+          echo "$TOTAL_OUTPUT"
+
+          # Use sed to replace the section inside README.md
+          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n${ESCAPED_TOTAL_OUTPUT}\n<!--END_WAKATIME-->" README.md
 
       - name: Commit & Push Changes
         env:
