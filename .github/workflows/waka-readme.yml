@@ -18,22 +18,33 @@ jobs:
           curl -s "https://wakatime.com/api/v1/users/current/stats/all_time?api_key=${{ secrets.WAKATIME_API_KEY }}" | jq '.' > wakatime.json
           cat wakatime.json  # Print full response for debugging
 
-      - name: Fetch WakaTime Stats
-        run: |
+            - name: Fetch WakaTime Stats
+            run: |
           # Get total coding time in seconds
-          TOTAL_SECONDS=$(jq -r '.data.total_seconds // 0' wakatime.json)
+          TOTAL_SECONDS=$(jq -r '.data.total_seconds // empty' wakatime.json)
+
+          # If TOTAL_SECONDS is empty, set it to 0
+          if [ -z "$TOTAL_SECONDS" ]; then
+            TOTAL_SECONDS=0
+          fi
+
           echo "Extracted Total Seconds: $TOTAL_SECONDS"  # Debugging
 
           # Convert to hours and minutes
           TOTAL_HOURS=$((TOTAL_SECONDS / 3600))
           TOTAL_MINUTES=$(( (TOTAL_SECONDS % 3600) / 60 ))
 
+          # Debug calculated time
+          echo "Total Hours: $TOTAL_HOURS, Total Minutes: $TOTAL_MINUTES"
+
           # Prepare total coding time message
           TOTAL_TIME="Total Coding Time : ${TOTAL_HOURS} hrs ${TOTAL_MINUTES} mins"
 
           # Get languages and their usage
           LANGUAGES=$(jq -r '.data.languages[] | "\(.name): \(.percent)%"' wakatime.json | sort -k2 -nr)
-          echo "Languages and their usage: $LANGUAGES"  # Debugging
+
+          # Debug language output
+          echo "Languages and their usage: $LANGUAGES"
 
           # Combine total time and languages for output
           echo -e "$TOTAL_TIME\n\nLanguages Used:\n$LANGUAGES" > waka-stats.txt
