@@ -31,6 +31,7 @@ jobs:
           git config --global user.name "itsnotTalha"
           git config --global user.email "talhajubayer737@gmail.com"
           git remote set-url origin https://itsnotTalha:${{ secrets.GH_PAT }}@github.com/itsnotTalha/itsnotTalha.git
-          git commit -am "Updated WakaTime stats"
+          git add README.md
+          git commit -m "Updated WakaTime stats" || echo "No changes to commit"
           git push origin main
 
