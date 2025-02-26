@@ -2,57 +2,55 @@ name: Update WakaTime Stats
 
 on:
   schedule:
-    - cron: "0 * * * *"  # Runs every hour
-  workflow_dispatch:
+    - cron: "0 0 * * *"  # Runs daily at midnight UTC
+  workflow_dispatch:  # Allows manual runs
 
 jobs:
-  update-readme:
+  update-wakatime:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Fetch WakaTime Stats
+      - name: Load Previous Total Time
         run: |
-          # Fetch JSON data from WakaTime API
-          curl -s "https://wakatime.com/api/v1/users/current/stats/all_time?api_key=${{ secrets.WAKATIME_API_KEY }}" | jq '.' > wakatime.json
-          
-          # Extract total time (in seconds)
-          TOTAL_SECONDS=$(jq -r '.data.total_seconds // 0' wakatime.json)
-
-          # Load previous total time if exists, else start from 0
-          if [ -f total_time.txt ]; then
-            PREVIOUS_TOTAL=$(cat total_time.txt)
-          else
-            PREVIOUS_TOTAL=0
+          # Initialize total time if the file doesn't exist
+          if [ ! -f total_time.txt ]; then
+            echo $((3 * 3600 + 18 * 60)) > total_time.txt
           fi
 
-          # Add the new total coding time to the previous total
-          NEW_TOTAL=$((PREVIOUS_TOTAL + TOTAL_SECONDS))
+      - name: Fetch Daily Coding Time from WakaTime
+        run: |
+          # Read previous total time (in seconds)
+          PREVIOUS_TOTAL=$(cat total_time.txt)
 
-          # Convert total seconds to human-readable format (H:M:S)
+          # Fetch yesterday's coding time from WakaTime API
+          curl -s "https://wakatime.com/api/v1/users/current/summaries?range=yesterday&api_key=${{ secrets.WAKATIME_API_KEY }}" | jq '.' > daily_waka.json
+          
+          # Extract daily coding time (in seconds)
+          NEW_TIME_ADDITION=$(jq '[.data[].grand_total.total_seconds] | add // 0' daily_waka.json)
+
+          # Calculate new total time
+          NEW_TOTAL=$((PREVIOUS_TOTAL + NEW_TIME_ADDITION))
+
+          # Convert total seconds to human-readable format
           TOTAL_HOURS=$((NEW_TOTAL / 3600))
           TOTAL_MINUTES=$(((NEW_TOTAL % 3600) / 60))
 
-          # Save the updated time
+          # Save updated total time
           echo "$NEW_TOTAL" > total_time.txt
           echo "Total Coding Time : ${TOTAL_HOURS} hrs ${TOTAL_MINUTES} mins" > waka-stats.txt
 
       - name: Update README
         run: |
           TOTAL_OUTPUT=$(cat waka-stats.txt)
-          echo "Updating README with: $TOTAL_OUTPUT"
-          
-          # Update README.md between markers
-          sed -i "/<!--START_WAKATIME-->/, /<!--END_WAKATIME-->/c\<!--START_WAKATIME-->\n$TOTAL_OUTPUT\n<!--END_WAKATIME-->" README.md
+          sed -i "s|Total Coding Time : .*|$TOTAL_OUTPUT|" README.md
 
-      - name: Commit & Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      - name: Commit and Push Changes
         run: |
-          git config --global user.name "itsnotTalha"
-          git config --global user.email "talhajubayer737@gmail.com"
-          git add README.md total_time.txt
-          git commit -m "Updated cumulative WakaTime coding stats" || echo "No changes to commit"
-          git push origin main
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add total_time.txt README.md
+          git commit -m "Updated total coding time from WakaTime" || exit 0
+          git push
