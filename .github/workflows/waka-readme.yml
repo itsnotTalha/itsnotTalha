@@ -15,26 +15,36 @@ jobs:
 
       - name: Load Previous Total Time
         run: |
-          # Initialize total time if the file doesn't exist
           if [ ! -f total_time.txt ]; then
             echo $((3 * 3600 + 18 * 60)) > total_time.txt
           fi
 
       - name: Fetch Daily Coding Time from WakaTime
         run: |
-          # Read previous total time (in seconds)
           PREVIOUS_TOTAL=$(cat total_time.txt)
-
-          # Fetch yesterday's coding time from WakaTime API
-          curl -s "https://wakatime.com/api/v1/users/current/summaries?range=yesterday&api_key=${{ secrets.WAKATIME_API_KEY }}" | jq '.' > daily_waka.json
           
-          # Extract daily coding time (in seconds)
+          # Fetch data and save response
+          curl -s "https://wakatime.com/api/v1/users/current/summaries?range=yesterday&api_key=${{ secrets.WAKATIME_API_KEY }}" > daily_waka.json
+          
+          # Debugging: Print API Response
+          echo "WakaTime API Response:"
+          cat daily_waka.json
+
+          # Extract daily coding time (total seconds)
           NEW_TIME_ADDITION=$(jq '[.data[].grand_total.total_seconds] | add // 0' daily_waka.json)
+
+          # Debugging: Print extracted time
+          echo "Extracted Daily Coding Time (Seconds): $NEW_TIME_ADDITION"
+
+          # Ensure time is valid
+          if [ -z "$NEW_TIME_ADDITION" ] || [ "$NEW_TIME_ADDITION" = "null" ]; then
+            NEW_TIME_ADDITION=0
+          fi
 
           # Calculate new total time
           NEW_TOTAL=$((PREVIOUS_TOTAL + NEW_TIME_ADDITION))
 
-          # Convert total seconds to human-readable format
+          # Convert to human-readable format
           TOTAL_HOURS=$((NEW_TOTAL / 3600))
           TOTAL_MINUTES=$(((NEW_TOTAL % 3600) / 60))
 
