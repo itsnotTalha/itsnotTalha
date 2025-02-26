@@ -30,8 +30,8 @@ jobs:
           echo "WakaTime API Response:"
           cat daily_waka.json
 
-          # Extract daily coding time (total seconds)
-          NEW_TIME_ADDITION=$(jq '[.data[].grand_total.total_seconds] | add // 0' daily_waka.json)
+          # Extract daily coding time (total seconds) and convert float to integer
+          NEW_TIME_ADDITION=$(jq '[.data[].grand_total.total_seconds] | add // 0 | floor' daily_waka.json)
 
           # Debugging: Print extracted time
           echo "Extracted Daily Coding Time (Seconds): $NEW_TIME_ADDITION"
