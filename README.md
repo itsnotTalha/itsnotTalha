@@ -9,7 +9,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=itsnottalha&label=Profile%20views&color=0e75b6&style=flat" alt="itsnottalha" /> </p>
 
-- 🌱 I’m currently learning **JAVA**
+- 🌱 I’m currently learning **JAVA** , **CPP** , **Python**
 
 - 💬 Ask me about **Nature and The Sky**
 
