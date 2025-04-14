@@ -59,8 +59,7 @@ def update_readme():
         if line.strip() == start_marker:
             inside_block = True
             new_content.append(line)
-            badge_url = f"https://img.shields.io/badge/Total%20Coding%20Time-{hours}h%20{minutes}m-blue"
-            new_content.append(f"![Total Coding Time]({badge_url})\n\n")
+            new_content.append(f"**Total Coding Time:** {hours}h {minutes}m\n\n")
             new_content.append("### Time Spent Per Language:\n")
             new_content.append(lang_times + "\n\n")  # Ensure lang_times is added correctly
             continue
