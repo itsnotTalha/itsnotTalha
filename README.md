@@ -16,7 +16,6 @@
 - 📫 How to reach me **talhajubayer737@gmail.com**
  
 - 🪂 Pay a visit **https://itsnottalha.github.io**
-- This commit was done just to keep up daily streak. 18-04-25
 
   
 
