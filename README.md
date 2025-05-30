@@ -16,7 +16,7 @@
 - 📫 How to reach me **talhajubayer737@gmail.com**
  
 - 🪂 Pay a visit **https://itsnottalha.github.io**
-<!-- SickPush D-6-->
+- SickPush D-7
 
   
 
