@@ -11,7 +11,7 @@
 
 - 🌱 I’m currently learning **JAVA** , **CPP** , **Python**
 
-- 💬 Ask me about **Nature and The Sky**
+- 💬 Ask me about **Just the sky**
 
 - 📫 How to reach me **talhajubayer737@gmail.com**
  
