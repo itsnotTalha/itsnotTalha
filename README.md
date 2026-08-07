@@ -223,7 +223,7 @@ Project developed as part of my Advanced Object-Oriented Programming coursework.
 ## ⏱️ Code Time
 
 <p align="center">
-  <b>Programming journey started on 01 March 2025</b>
+  <b>Programming journey counting started on 01 March 2025</b>
 </p>
 
 <p align="center">
