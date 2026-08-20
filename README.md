@@ -296,7 +296,7 @@ WakaTime badge:
 
 <p align="center">
 
-[![Talha's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=itsnotTalha&theme=github-dark-dimmed&custom_title=Talha's%20Contribution%20Graph&hide_border=true&area=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Talha's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=itsnottalha&theme=github-dark-dimmed&custom_title=Talha's%20Contribution%20Graph&hide_border=true&area=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 </p>
 
